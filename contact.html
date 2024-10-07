@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Mall.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./CSS/myCustom.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css'> <!--Länk till ikoner. https://github.com/astrit/css.gg-->
+    <link rel="stylesheet" href="./CSS/jquery-ui.css"><!--Länk till CSS för jQueryUI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--Länk till jQuery-->
+    <script src="./javascript/jquery-ui.js"></script> <!--Länk till jQueryUI filen-->
+    <script src="./javascript/myCustomJs.js"></script>
+    <style>
+        #txtName, #txtEmail {
+            border-width: 1px; /*Förändrar gränstjockleken så jag tycker det ser snyggare ut*/
+            border-radius: 2px;
+        }
+        #txtMsg{
+            border-width: 1px;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="london.html">London</a>
+    <a href="paris.html">Paris</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="survey.html">Survey</a>
+    <a href="bucketlist.html">Bucketlist</a>
+    <a href="contact.html" class="active w3-gray">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+
+<div class="w3-container w3-gray">
+    <h1>Contact</h1> 
+    <p>Feel free to share you personal detail :)</p> 
+</div>
+<br>
+<div class="w3-row-padding">
+    <div class="w3-content" id="formQuestion1">
+        <h2>Moment 3 & Moment 4</h2>
+        <fieldset style="width: 45%;">
+        <legend>Your coordinates please</legend>
+            <form id="formContact"> <!--Håll muspekaren över input fälten för att visa tooltip-->
+                <label for="txtName">Name: <span>*</span></label> <br>
+                <input type="text" id="txtName" value="" placeholder="Your name" style="border-width:1px" />
+                <i id="errorMsg1" class="gg-danger" style="display:none;color:red;"></i><br>
+                <label for="txtEmail">Email: <span>*</span></label> <br>
+                <input type="email" id="txtEmail" value="" placeholder="Your email address" style="border-width:1px"/>
+                <i id="errorMsg2" class="gg-danger" style="display:none;color:red;"></i><br><br>
+                <label for="selCity" >City: <span>*</span></label><br>
+                <select id="selCity">
+                        <option selected value="">Choose a city</option> 
+                        <option value="Tokyo">Tokyo</option>
+                        <option value="London">London</option>
+                        <option value="Paris">Paris</option>
+                </select>
+                <i id="errorMsg3" class="gg-danger" style="display:none;color:red;"></i><br><br>
+                <label for="txtMsg">Message: <span>*</span></label> <br>
+                <textarea id="txtMsg" name="txtMsg" placeholder="Your message" style="width:300px;height:100px"></textarea>
+                <i id="errorMsg4" class="gg-danger" style="display:none;color:red;"></i><br>
+                <button type="button" id="bt">Send</button>
+                <p id="errorMsg5" class="w3-text-red"></p>
+            </form><br>
+            <div style="position:absolute;">    
+        
+                <img id="show" style="position:absolute" src="./img/please.png"> <!--position:absolute gör så att left, right, top, bottom attributen fungerar, fast i det här tillfället är det för animationens skull-->
+                <img id="hide" style="display:none; position:absolute; bottom:1000px" src="./img/thankyou.png">
+                <!--display gör #hide bilden osynlig på default, samt bottom visar bilden ovanför själva webbsidan-->
+            </div><br><br><br>
+        </fieldset>
+    </div>
+</div>
+
+
+</body>
+</html>

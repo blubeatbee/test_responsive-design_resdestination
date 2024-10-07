@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Mall.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./CSS/myCustom.css">
+    <link rel="stylesheet" href="./CSS/jquery-ui.css"><!--Länk till CSS för jQueryUI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--Länk till jQuery-->
+    <script src="./javascript/jquery-ui.js"></script> <!--Länk till jQueryUI filen-->
+    <script src="./javascript/myCustomJs.js"></script>
+    <style>
+        .myFieldset {/*Ändrar storleken på alla klasser som heter myFieldset när breddvidden går under 600px*/
+            width: 63%;
+        }
+        @media (max-width: 600px) {
+            .myFieldset {
+                min-width: 100%;
+            }
+        }
+        #sortable {
+            list-style: none;
+            padding: 0;
+        }
+        .sortitem {
+            margin: 1% 0%;
+            padding: 5px 2px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html" >Home</a>
+    <a href="london.html">London</a>
+    <a href="paris.html">Paris</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="survey.html">Survey</a>
+    <a href="bucketlist.html" class="active w3-pink">Bucketlist</a>
+    <a href="contact.html">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+
+<div class="w3-container w3-pink">
+    <h1>Cities Bucketlist</h1> 
+    <p>Add up to five cities you wish to visit.</p> 
+</div>
+
+<div class="w3-row-padding">
+    <div class="w3-content">
+        <h2>Moment 2</h2>
+        <fieldset class="myFieldset"> <!--Skapar egen klass-->
+            <legend>Add a city:</legend>
+            <input type="text" id="fetch" name="Fetch" size="32" maxlength="30"><br>
+            <input type="button" id="add" value="Add City" onclick="inputCity()">
+            <br>
+            <p id="inputError1" class="w3-text-red"> </p>
+            <br>
+            <legend>List of cities:</legend>
+            <ul id="sortable"> <!--Listan kan sorteras med muspekaren. Kan se ganska konstigt ut efter testat listan i ett tag-->
+                <li class="sortitem">
+                    <textarea class="textarea" id="put1" cols="30" rows="1" wrap="soft" readonly></textarea>
+                    <input type="button" id="remove1" value="Remove" onclick="removeCity1()">
+                </li>
+                <li class="sortitem">
+                    <textarea class="textarea" id="put2" cols="30" rows="1" wrap="soft" readonly></textarea>
+                    <input type="button" id="remove2" value="Remove" onclick="removeCity2()">
+                </li>
+                <li class="sortitem">
+                    <textarea class="textarea" id="put3" cols="30" rows="1" wrap="soft" readonly></textarea>
+                    <input type="button" id="remove3" value="Remove" onclick="removeCity3()">
+                </li>
+                <li class="sortitem">
+                    <textarea class="textarea" id="put4" cols="30" rows="1" wrap="soft" readonly></textarea>
+                    <input type="button" id="remove4" value="Remove" onclick="removeCity4()">
+                </li>
+                <li class="sortitem"> 
+                    <textarea class="textarea" id="put5" cols="30" rows="1" wrap="soft" readonly></textarea>
+                    <input type="button" id="remove5" value="Remove" onclick="removeCity5()">
+                </li>
+            </ul>
+            <p id="inputError2"> </p>
+            <input type="button" id="sort" value="Sort Alphabetically" onclick="sortCities()"><br>
+            <p id="inputError3" class="w3-text-red"> </p>
+        </fieldset>
+    </div>
+</div>
+
+
+</body>
+</html>

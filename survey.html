@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Mall.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./CSS/myCustom.css">
+    <link rel="stylesheet" href="./CSS/jquery-ui.css"><!--Länk till CSS för jQueryUI-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--Länk till jQuery-->
+    <script src="./javascript/jquery-ui.js"></script> <!--Länk till jQueryUI filen-->
+    <script src="./javascript/myCustomJs.js"></script> 
+    <style>
+        #alertbox{
+            display:none;
+            position:absolute;
+            width:300px;
+            height:130px;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="london.html">London</a>
+    <a href="paris.html">Paris</a>
+    <a href="tokyo.html">Tokyo</a>
+    <a href="survey.html" class="active w3-orange">Survey</a>
+    <a href="bucketlist.html">Bucketlist</a>
+    <a href="contact.html">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+    </a>
+</div>
+
+<div class="w3-container w3-orange">
+    <h1>Survey</h1> 
+    <p>
+        What is your favourite city? 
+    </p> 
+</div>
+
+<div id="alertbox" class="w3-card w3-orange">
+    <div style="position:relative;padding:10px;text-align:center;">
+        <p>
+            Invalid emailaddress!<br>Are you sure you typed it correctly?
+        </p>
+        <button class="w3-button w3-white" id="alertboxbt" style="width:50%;">Ok</button>
+    </div>
+</div> <!--En varninglåda poppar fram med effekt när 'send' knappen trycks men email-adressen  är ej ifylld-->
+
+<div class="w3-row-padding">
+    <div class="w3-third">
+        <h2>Moment 1</h2>
+        <form id="surveyform" novalidate>
+            <fieldset>
+                <legend>Personal Details</legend>
+                <label for="fname">Given Name:</label><br>
+                <input type="text" name="fname" id="fname"><br><!--Behöver sätta slå på required via JQuery-->
+                <label for="sname">Surname:</label><br>
+                <input type="text" name="sname" id="sname"><br>
+                <label for="address">E-mail Address:<span>*</span></label><br>
+                <input type="email" name="address" id="address">
+            </fieldset><br>
+            <fieldset>
+                <label for="message">What is your next travel destination?</label>
+                <textarea name="message" id="message" cols="40" rows="5"></textarea>
+            </fieldset><br>
+            <fieldset>
+                <legend>Favourite City</legend>
+                <input type="radio" name="city" id="london" value="London">
+                <label for="london">London</label><br>
+                <input type="radio" name="city" id="paris" value="Paris">
+                <label for="paris">Paris</label><br>
+                <input type="radio" name="city" id="tokyo" value="Tokyo">
+                <label for="tokyo">Tokyo</label><br>
+                <input type="radio" name="city" id="other" value="Other">
+                <label for="other">Other</label><br>
+            </fieldset><br>
+            <button type="submit" id="send">Send</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
